@@ -6,11 +6,33 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Marker that public methods should have timed execution statistics collected.
+ * Put onto a Class or methods that we want timed execution statistics collected.
+ * <p>
+ * When put on a Class the default is that all public methods on that Class are timed.
+ * </p>
+ * <p>
+ * When put on a method we want to override some of metric naming or only collect timed
+ * execution on very few methods on the class.
+ * </p>
  */
-@Target({ ElementType.TYPE, ElementType.METHOD })
+@Target({ElementType.TYPE, ElementType.METHOD})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Timed {
+
+  /**
+   * Set the prefix for short metric names. Typically used at class level to define a common short prefix
+   * to replace the package name for the metrics on the class.
+   * <pre>{@code
+   *
+   * @Timed(perfix="web.api")
+   * public class AdminResource
+   *   ...
+   *
+   * }</pre>
+   *
+   * @return
+   */
+  String prefix() default "";
 
   /**
    * Set the method name part of the full metric name.
@@ -25,12 +47,11 @@ public @interface Timed {
   /**
    * Set the full name of the metric.
    * <p>
-   * Provides a complete replacement of the metric name. The package and class names are not used at
-   * all.
+   * Provides a complete replacement of the metric name. The package and class names are not used at all.
    */
   String fullName() default "";
 
-  
+
   /**
    * Define buckets as a list of millisecond times.
    * <p>
