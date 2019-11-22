@@ -29,8 +29,6 @@ public @interface Timed {
    *   ...
    *
    * }</pre>
-   *
-   * @return
    */
   String prefix() default "";
 
