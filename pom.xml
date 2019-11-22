@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.avaje.metrics</groupId>
-    <artifactId>metric-annotation</artifactId>
+    <artifactId>metrics-annotation</artifactId>
     <version>8.1-SNAPSHOT</version>
 
     <parent>
