@@ -1,1 +1,1 @@
-# avaje-metric-annotation
+# metrics-annotation
