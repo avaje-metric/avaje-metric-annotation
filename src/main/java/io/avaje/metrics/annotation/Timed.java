@@ -33,22 +33,17 @@ public @interface Timed {
   String prefix() default "";
 
   /**
-   * Set the method name part of the full metric name.
+   * Set the metric name.
    * <p>
-   * This is used when the method name is not appropriate or when there is method overloading and
-   * the otherwise generated unique name is unclear.
+   * When on a class this override the default metric name which is based
+   * on the short name of the class.
+   * </p>
    * <p>
-   * The package and class names are still used and prepended to this name value.
+   * On methods we use this when the method name is not appropriate or when
+   * there is method overloading and the otherwise generated unique name is unclear.
+   * <p>
    */
   String name() default "";
-
-  /**
-   * Set the full name of the metric.
-   * <p>
-   * Provides a complete replacement of the metric name. The package and class names are not used at all.
-   */
-  String fullName() default "";
-
 
   /**
    * Define buckets as a list of millisecond times.
