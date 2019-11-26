@@ -4,7 +4,7 @@
 
     <groupId>io.avaje.metrics</groupId>
     <artifactId>metrics-annotation</artifactId>
-    <version>8.2-SNAPSHOT</version>
+    <version>8.2</version>
 
     <parent>
         <groupId>org.avaje</groupId>
@@ -14,7 +14,7 @@
 
     <scm>
         <developerConnection>scm:git:git@github.com:avaje-metric/avaje-metric-annotation.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>metrics-annotation-8.2</tag>
     </scm>
 
 </project>
